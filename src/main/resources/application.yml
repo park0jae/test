@@ -1,0 +1,31 @@
+spring:
+  main:
+    allow-circular-references: true
+
+  datasource:
+    url: jdbc:mysql://13.125.85.40:3308/ExhibitionProgram?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  sql:
+    init:
+      mode: always
+    batch:
+      jdbc:
+        schema: classpath:data.sql
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        show_sql: true
+        default_batch_fetch_size: 100
+    defer-datasource-initialization: true
+
+upload:
+  image:
+    location: /Users/zerozae/Desktop/images/

@@ -1,0 +1,33 @@
+#spring:
+#  main:
+#    allow-circular-references: true
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/testDB;MODE=MySQL;
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+#        show_sql: true
+#  sql:
+#    init:
+#      mode: always
+#    scripts: classpath:schema.sql
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+  jpa:
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always
+      scripts: classpath:schema.sql
+logging.level:
+  org.hibernate.SQL: debug
+  org.springframework.jdbc: debug
+
