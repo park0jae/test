@@ -1,33 +1,25 @@
-#spring:
-#  main:
-#    allow-circular-references: true
-#  datasource:
-#    url: jdbc:h2:tcp://localhost/~/testDB;MODE=MySQL;
-#    username: sa
-#    password:
-#    driver-class-name: org.h2.Driver
-#  jpa:
-#    hibernate:
-#      ddl-auto: create
-#    properties:
-#      hibernate:
-#        show_sql: true
-#  sql:
-#    init:
-#      mode: always
-#    scripts: classpath:schema.sql
-
 spring:
+  main:
+    allow-circular-references: true
   datasource:
     url: jdbc:h2:mem:testdb
+    username: sa
+    password:
     driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: true
+        default_batch_fetch_size: 100
+    defer-datasource-initialization: true
+
   sql:
     init:
       mode: always
-      scripts: classpath:schema.sql
+
+
 logging.level:
   org.hibernate.SQL: debug
   org.springframework.jdbc: debug
