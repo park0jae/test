@@ -1,4 +1,4 @@
-package com.zerozae.exhibition.global.config;
+package com.zerozae.exhibition.global.config.cors;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

@@ -8,12 +8,9 @@ spring:
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-  sql:
-    init:
-      mode: always
-    batch:
-      jdbc:
-        schema: classpath:data.sql
+#  sql:
+#    init:
+#      mode: always
 
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -25,6 +22,18 @@ spring:
         show_sql: true
         default_batch_fetch_size: 100
     defer-datasource-initialization: true
+
+cloud:
+  aws:
+    s3:
+      bucket: exhibitionbucket
+    stack:
+      auto: false
+    region:
+      static: ap-northeast-2
+    credentials:
+      access-key: AKIA22MOJZ7VWC7CP6ZY
+      secret-key: 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
 
 upload:
   image:
